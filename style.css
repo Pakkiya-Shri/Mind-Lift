@@ -1,0 +1,684 @@
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f8fc;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4f46e5;
+}
+
+.logo span {
+    margin-right: 5px;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #4f46e5;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    background: #eef2ff;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.tagline {
+    color: #4f46e5;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 58px;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    color: #111827;
+}
+
+.hero h1 span {
+    color: #4f46e5;
+}
+
+.hero-text {
+    color: #64748b;
+    font-size: 18px;
+    max-width: 520px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn,
+.secondary-btn {
+    border: none;
+    padding: 14px 25px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #4f46e5;
+    color: white;
+}
+
+.primary-btn:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.secondary-btn:hover {
+    background: #cbd5e1;
+}
+
+
+/* =========================
+   HERO CARD
+========================= */
+
+.hero-card {
+    width: 380px;
+    background: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.1);
+}
+
+.brain-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef2ff;
+    border-radius: 50%;
+    font-size: 45px;
+}
+
+.hero-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.hero-card p {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 20px;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats strong {
+    color: #4f46e5;
+    font-size: 20px;
+}
+
+.stats small {
+    color: #64748b;
+}
+
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills-section {
+    padding: 90px 8%;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.section-title h2 {
+    font-size: 38px;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.section-title > p:last-child {
+    color: #64748b;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+
+/* =========================
+   SKILL CARDS
+========================= */
+
+.skill-card {
+    background: #f8fafc;
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-7px);
+    border-color: #818cf8;
+    box-shadow: 0 10px 25px rgba(79, 70, 229, 0.12);
+}
+
+.skill-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #1e293b;
+}
+
+.skill-card p {
+    color: #64748b;
+    font-size: 14px;
+    min-height: 65px;
+}
+
+.skill-card span {
+    display: inline-block;
+    margin-top: 15px;
+    color: #4f46e5;
+    font-weight: bold;
+}
+
+
+/* =========================
+   QUIZ SECTION
+========================= */
+
+.quiz-section {
+    display: none;
+    min-height: 100vh;
+    padding: 70px 20px;
+    background: #f6f8fc;
+}
+
+.quiz-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.quiz-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.quiz-skill {
+    color: #4f46e5;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.quiz-header h2 {
+    font-size: 22px;
+}
+
+.timer {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    overflow: hidden;
+}
+
+#progress {
+    width: 20%;
+    height: 100%;
+    background: #4f46e5;
+    transition: 0.3s;
+}
+
+
+/* =========================
+   QUESTION
+========================= */
+
+.question-box {
+    margin-bottom: 30px;
+}
+
+.question-box h2 {
+    font-size: 25px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option {
+    padding: 16px 20px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: white;
+}
+
+.option:hover {
+    border-color: #818cf8;
+    background: #f5f3ff;
+}
+
+.option.selected {
+    border-color: #4f46e5;
+    background: #eef2ff;
+}
+
+
+/* =========================
+   QUIZ BUTTONS
+========================= */
+
+.quiz-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+
+/* =========================
+   RESULT SECTION
+========================= */
+
+.result-section {
+    display: none;
+    min-height: 100vh;
+    padding: 70px 20px;
+    align-items: center;
+    justify-content: center;
+    background: #f6f8fc;
+}
+
+.result-card {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.result-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.result-card h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.score-circle {
+    width: 130px;
+    height: 130px;
+    margin: 20px auto;
+    border: 8px solid #818cf8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-circle span {
+    font-size: 40px;
+    font-weight: bold;
+    color: #4f46e5;
+}
+
+.score-circle small {
+    font-size: 18px;
+    color: #64748b;
+}
+
+.result-card h2 {
+    margin-bottom: 5px;
+}
+
+.result-card > p {
+    color: #64748b;
+}
+
+
+/* =========================
+   RESULT STATS
+========================= */
+
+.result-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.result-stats div {
+    padding: 18px 10px;
+    background: #f8fafc;
+    border-radius: 10px;
+}
+
+.result-stats strong {
+    display: block;
+    font-size: 25px;
+    color: #4f46e5;
+}
+
+.result-stats span {
+    font-size: 13px;
+    color: #64748b;
+}
+
+
+/* =========================
+   XP BOX
+========================= */
+
+.xp-box {
+    background: #fef3c7;
+    color: #92400e;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about-section {
+    padding: 90px 8%;
+    background: #eef2ff;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.about-card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.about-card span {
+    font-size: 35px;
+}
+
+.about-card h3 {
+    margin: 15px 0 10px;
+}
+
+.about-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 40px 20px;
+    background: #111827;
+    color: white;
+    text-align: center;
+}
+
+footer .logo {
+    margin-bottom: 10px;
+}
+
+footer p {
+    color: #cbd5e1;
+}
+
+footer .copyright {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        padding: 70px 5%;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .navbar nav {
+        gap: 15px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-container {
+        padding: 25px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .navbar {
+        height: auto;
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar nav {
+        gap: 20px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .section-title h2 {
+        font-size: 30px;
+    }
+
+    .quiz-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .quiz-buttons {
+        gap: 10px;
+    }
+
+    .quiz-buttons button {
+        width: 50%;
+    }
+
+    .result-card {
+        padding: 30px 20px;
+    }
+
+    .result-stats {
+        gap: 8px;
+    }
+}

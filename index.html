@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MindLift - Student Skill Assessment</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="navbar">
+        <div class="logo">
+            <span>🧠</span> MindLift
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="tagline">SMART SKILL ASSESSMENT</p>
+
+            <h1>
+                Test Your Skills.<br>
+                <span>Lift Your Mind.</span>
+            </h1>
+
+            <p class="hero-text">
+                Improve your technical and aptitude skills through
+                timed assessments, instant results and personalized practice.
+            </p>
+
+            <button class="primary-btn" onclick="showSkills()">
+                Start Assessment →
+            </button>
+
+        </div>
+
+        <div class="hero-card">
+
+            <div class="brain-icon">🧠</div>
+
+            <h3>Ready to Challenge Yourself?</h3>
+
+            <p>
+                Choose a skill and start your assessment.
+            </p>
+
+            <div class="stats">
+
+                <div>
+                    <strong>10+</strong>
+                    <small>Skills</small>
+                </div>
+
+                <div>
+                    <strong>3</strong>
+                    <small>Levels</small>
+                </div>
+
+                <div>
+                    <strong>⏱</strong>
+                    <small>Timed</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="skills-section">
+
+        <div class="section-title">
+
+            <p class="tagline">CHOOSE YOUR SKILL</p>
+
+            <h2>What do you want to practice?</h2>
+
+            <p>
+                Select a skill to begin your timed assessment.
+            </p>
+
+        </div>
+
+
+        <div class="skills-container">
+
+            <!-- Aptitude -->
+            <div class="skill-card" onclick="startQuiz('Aptitude')">
+                <div class="skill-icon">🧮</div>
+
+                <h3>Aptitude</h3>
+
+                <p>
+                    Numbers, percentages, ratios and problem solving.
+                </p>
+
+                <span>Start Test →</span>
+            </div>
+
+
+            <!-- Logical Reasoning -->
+            <div class="skill-card" onclick="startQuiz('Reasoning')">
+                <div class="skill-icon">🧩</div>
+
+                <h3>Logical Reasoning</h3>
+
+                <p>
+                    Patterns, sequences and logical thinking.
+                </p>
+
+                <span>Start Test →</span>
+            </div>
+
+
+            <!-- Verbal -->
+            <div class="skill-card" onclick="startQuiz('Verbal')">
+                <div class="skill-icon">📖</div>
+
+                <h3>Verbal Ability</h3>
+
+                <p>
+                    Grammar, vocabulary and communication skills.
+                </p>
+
+                <span>Start Test →</span>
+            </div>
+
+
+            <!-- Python -->
+            <div class="skill-card" onclick="startQuiz('Python')">
+                <div class="skill-icon">🐍</div>
+
+                <h3>Python</h3>
+
+                <p>
+                    Test your Python programming fundamentals.
+                </p>
+
+                <span>Start Test →</span>
+            </div>
+
+
+            <!-- Java -->
+            <div class="skill-card" onclick="startQuiz('Java')">
+                <div class="skill-icon">☕</div>
+
+                <h3>Java</h3>
+
+                <p>
+                    Practice Java programming concepts.
+                </p>
+
+                <span>Start Test →</span>
+            </div>
+
+
+            <!-- JavaScript -->
+            <div class="skill-card" onclick="startQuiz('JavaScript')">
+                <div class="skill-icon">⚡</div>
+
+                <h3>JavaScript</h3>
+
+                <p>
+                    Improve your JavaScript programming skills.
+                </p>
+
+                <span>Start Test →</span>
+            </div>
+
+
+            <!-- SQL -->
+            <div class="skill-card" onclick="startQuiz('SQL')">
+                <div class="skill-icon">🗄️</div>
+
+                <h3>SQL</h3>
+
+                <p>
+                    Practice queries, databases and SQL concepts.
+                </p>
+
+                <span>Start Test →</span>
+            </div>
+
+
+            <!-- HTML CSS -->
+            <div class="skill-card" onclick="startQuiz('HTML/CSS')">
+                <div class="skill-icon">🌐</div>
+
+                <h3>HTML & CSS</h3>
+
+                <p>
+                    Test your web development fundamentals.
+                </p>
+
+                <span>Start Test →</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= QUIZ ================= -->
+    <section id="quiz" class="quiz-section">
+
+        <div class="quiz-container">
+
+            <div class="quiz-header">
+
+                <div>
+                    <p class="quiz-skill" id="quizSkill">
+                        Python
+                    </p>
+
+                    <h2 id="questionNumber">
+                        Question 1 of 5
+                    </h2>
+                </div>
+
+                <div class="timer">
+                    ⏱ <span id="timer">01:00</span>
+                </div>
+
+            </div>
+
+
+            <!-- Progress -->
+            <div class="progress-bar">
+                <div id="progress"></div>
+            </div>
+
+
+            <!-- Question -->
+            <div class="question-box">
+
+                <h2 id="question">
+                    Question will appear here
+                </h2>
+
+                <div id="options" class="options-container">
+                    <!-- Options generated by JavaScript -->
+                </div>
+
+            </div>
+
+
+            <div class="quiz-buttons">
+
+                <button
+                    class="secondary-btn"
+                    onclick="previousQuestion()"
+                    id="previousBtn">
+                    ← Previous
+                </button>
+
+                <button
+                    class="primary-btn"
+                    onclick="nextQuestion()"
+                    id="nextBtn">
+                    Next →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= RESULT ================= -->
+    <section id="result" class="result-section">
+
+        <div class="result-card">
+
+            <div class="result-icon">
+                🏆
+            </div>
+
+            <p class="tagline">ASSESSMENT COMPLETED</p>
+
+            <h1>Your Result</h1>
+
+            <div class="score-circle">
+
+                <span id="score">
+                    0
+                </span>
+
+                <small>
+                    / 5
+                </small>
+
+            </div>
+
+
+            <h2 id="resultMessage">
+                Good Job!
+            </h2>
+
+            <p id="resultText">
+                Keep practicing to improve your skills.
+            </p>
+
+
+            <div class="result-stats">
+
+                <div>
+                    <strong id="correctAnswers">
+                        0
+                    </strong>
+
+                    <span>Correct</span>
+                </div>
+
+
+                <div>
+                    <strong id="wrongAnswers">
+                        0
+                    </strong>
+
+                    <span>Wrong</span>
+                </div>
+
+
+                <div>
+                    <strong id="percentage">
+                        0%
+                    </strong>
+
+                    <span>Score</span>
+                </div>
+
+            </div>
+
+
+            <div class="xp-box">
+
+                ⭐
+
+                <strong>
+                    +<span id="xp">0</span> XP
+                </strong>
+
+                earned
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                onclick="showSkills()">
+                Take Another Test
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about-section">
+
+        <div class="section-title">
+
+            <p class="tagline">ABOUT MINDLIFT</p>
+
+            <h2>Build Skills. Track Progress. Get Better.</h2>
+
+            <p>
+                MindLift helps students prepare for placements by
+                testing their knowledge through simple timed assessments.
+            </p>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-card">
+                <span>⏱️</span>
+                <h3>Timed Tests</h3>
+                <p>
+                    Practice answering questions within a fixed time.
+                </p>
+            </div>
+
+
+            <div class="about-card">
+                <span>📊</span>
+                <h3>Instant Results</h3>
+                <p>
+                    View your score and performance immediately.
+                </p>
+            </div>
+
+
+            <div class="about-card">
+                <span>🏆</span>
+                <h3>Earn XP</h3>
+                <p>
+                    Earn points as you complete assessments.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <div class="logo">
+            🧠 MindLift
+        </div>
+
+        <p>
+            Learn. Practice. Improve.
+        </p>
+
+        <p class="copyright">
+            © 2026 MindLift. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
